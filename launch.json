@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PyTorch Distributed",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/your_training_script.py",
+            "console": "integratedTerminal",
+            "args": [
+                "-m", "torch.distributed.launch",
+                "--nproc_per_node=1",
+                "--use_env",
+                "--master_port=18810"
+            ],
+            "env": {
+                "MASTER_ADDR": "localhost",
+                "MASTER_PORT": "18810"
+            }
+        }
+    ]
+}
